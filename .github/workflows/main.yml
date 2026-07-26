@@ -24,6 +24,7 @@ jobs:
         run: |
           mkdir --parents toolchain/clang/host/linux-x86
           curl --silent "${{ env.TOOLCHAIN_URI }}" | tar --extract --directory=toolchain/clang/host/linux-x86 --gzip
+          fetch-depth: 1
 
       - name: Setup toolchain path
         run: echo "${{ github.workspace }}/toolchain/clang/host/linux-x86/bin" >> $GITHUB_PATH
